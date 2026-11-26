@@ -12,13 +12,15 @@ Los ficheros más importantes del proyecto están disponible en este repositorio
 
 El resto de los ficheros, generalmente de contenido muy pesado o creado por terceros y sin intención de ser modificado en este proyecto, tendrá que descargarse de carpetas compartidas en Google Drive con ficheros ZIP, para después descomprirlos directamente en la carpeta Content. Bastante contenido común a todos los proyectos (StarterContent, LevelPrototyping, etc.) está [disponible con acceso general aquí](https://drive.google.com/drive/u/0/folders/1TfoB5S3yQw49-onoFfn0q79PTfk2RoSE) para su descarga.
 
-Para este proyecto en particular hace falta descargar los ficheros ZIP, que ya incluyen las carpetas del mismo nombre, para descomprimirlas directamente en Content: 
+Para este proyecto en particular hace falta descargar los ficheros ZIP (en principio de la versión 5.8), que ya incluyen las carpetas del mismo nombre, para descomprimirlas directamente en Content: 
 * Characters
 * FirstPerson
 * LevelPrototyping
 * StarterContent
 * Weapons
-(Ojo, si hay problemas, descargad las versiones de Unreal Engine 5.6)
+*¡Cuidado!* Al haber movido la carpeta Input de sitio, se han roto algunas cosas en el código.  
+- En BP_FirsPersonPlayerController hay que reestablecer el IMC_Default como IMC
+- En BP_FirstPersonCharacter hay que reestablecer el IMC_MouseLook como IMC, además de conectar las event action (spliteadas) de los eventos IA_Look al nodo Aim, IA_MouseLook al nodo Aim, IA_Move al nodo Move, e IA_Jump al nodo Jump.
 
 Para facilitar esta descarga podemos crear un fichero de PowerShell que haga ese trabajo con nosotros: en bucle empezar a descargar uno a uno los ficheros ZIP del contenido, a través del ID público de las carpetas compartidas en Google Drive y si no hay carpetas ya con esos nombres dentro de Content, luego descomprimir y volcar cada uno de ellos en la carpeta Content, destruyéndo el fichero ZIP antes de descargar el siguiente. Hay que recordar que los archivos descomprimidos de cada zip deben estar en una única carpeta con el nombre del fichero zip como subcarpeta de Content.
 
