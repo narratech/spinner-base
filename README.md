@@ -18,7 +18,8 @@ Para este proyecto en particular hace falta descargar los ficheros ZIP (en princ
 * LevelPrototyping
 * StarterContent
 * Weapons
-*¡Cuidado!* Al haber movido la carpeta Input de sitio, se han roto algunas cosas en el código.  
+  
+**¡CUIDADO!** Al haber movido la carpeta Input de sitio, se han roto algunas cosas en el código.  
 - En BP_FirsPersonPlayerController hay que reestablecer el IMC_Default como IMC
 - En BP_FirstPersonCharacter hay que reestablecer el IMC_MouseLook como IMC, además de conectar las event action (spliteadas) de los eventos IA_Look al nodo Aim, IA_MouseLook al nodo Aim, IA_Move al nodo Move, e IA_Jump al nodo Jump.
 
